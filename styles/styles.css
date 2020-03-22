@@ -1,0 +1,65 @@
+/* @font-face {
+    font-family: 'Poppins';
+    font-weight: 400;
+    src: url('./static/fonts/Poppins-Regular.ttf') format('truetype')
+} */
+
+:root {
+    --purple-colour: #6236ff;
+    --red-colour: #f9345e;
+    --green-colour: #1cb142;
+    --orange-colour: #fa6400;
+    --navy-colour: #1a1053;
+    --grey-colour: #817c9b;
+    --light-grey-colour: #ebebeb;
+}
+
+html {
+    font-size: 62.5%;
+    background: #f8f8f8;
+}
+
+body {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    font-family: Poppins, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--navy-colour);
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+}
+
+.wrapper {
+    max-width: 1200px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+html, body, body>div {
+    height: 100%;
+}
+
+#main {
+    flex: 1 0 auto;
+}
+
+.header, .footer {
+    flex-shrink: 0;
+}
+
+.panel-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

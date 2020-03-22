@@ -1,0 +1,6 @@
+.footer {
+    background: var(--light-grey-colour);
+    padding: 5px;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+}

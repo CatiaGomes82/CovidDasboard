@@ -1,0 +1,54 @@
+.compare {
+    text-align: center;
+}
+
+.compare--total .compare__figure {
+    color: var(--red-colour);
+}
+
+.compare--active .compare__figure {
+    color: var(--orange-colour);
+}
+
+.compare--deaths .compare__figure {
+    color: var(--purple-colour);
+}
+
+.compare--recovered .compare__figure {
+    color: var(--green-colour);
+}
+
+.compare__figure {
+    margin-top: 5px;
+    font-size: 2.6rem;
+    line-height: 3rem;
+    font-weight: 600;
+}
+
+.compare__difference {
+    font-size: 1.3rem;
+    color: var(--grey-colour);
+    font-weight: 600;
+    margin-top: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.compare__character {
+    font-size: 0.9rem;
+    line-height: 0.9rem;
+    margin-right: 2px;
+}
+
+.compare__character--stable {
+    color: var(--orange-colour);
+}
+
+.compare__character--increase {
+    color: var(--red-colour);
+}
+
+.compare__character--decrease {
+    color: var(--green-colour);
+}

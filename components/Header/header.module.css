@@ -1,0 +1,11 @@
+.header {
+    padding: 20px 0;
+    background: #ffffff;
+    border-bottom: 1px solid var(--light-grey-colour);
+}
+
+.header__title-highlight {
+    color: var(--purple-colour);
+    margin-right: 10px;
+    font-weight: 700;
+}

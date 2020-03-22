@@ -1,11 +1,6 @@
 import Head from 'next/head';
-import Header from './Header';
-
-const layoutStyle = {
-  margin: 20,
-  padding: 20,
-  border: '1px solid #DDD'
-};
+import Header from './Header/header';
+import Footer from './Footer/footer';
 
 const Layout = props => (
   <React.Fragment>
@@ -15,12 +10,15 @@ const Layout = props => (
           content="initial-scale=1.0, width=device-width"
           key="viewport"
         />
-        <link rel="stylesheet" href="https://unpkg.com/react-vis/dist/style.css"></link>
-      </Head>
-    <div style={layoutStyle}>
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet"></link>
+    </Head>
+    <React.Fragment>
       <Header />
-      {props.children}
-    </div>
+      <main id="main" className="wrapper">
+        {props.children}
+      </main>
+      <Footer />
+    </React.Fragment>
   </React.Fragment>
 );
 
