@@ -2,9 +2,6 @@ import Head from 'next/head';
 import Header from './Header/header';
 import Footer from './Footer/footer';
 
-import '../styles/normalize.css';
-import '../styles/styles.css';
-
 const Layout = props => (
   <React.Fragment>
       <Head>
