@@ -4,3 +4,9 @@
     font-size: 1.2rem;
     line-height: 1.8rem;
 }
+
+.footer__wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
