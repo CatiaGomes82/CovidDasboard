@@ -1,6 +1,6 @@
 import Panel from '../Panel';
 import { figureFormatter } from '../../utils/formatter';
-import styles from './compare-panel.module.css';
+import './compare-panel.module.css';
 
 const ComparePanel = props => {
     const differencePercentage = Math.round(100 - (props.prev * 100 / props.current));

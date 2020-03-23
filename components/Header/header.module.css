@@ -4,8 +4,34 @@
     border-bottom: 1px solid var(--light-grey-colour);
 }
 
+.header__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__title {
+    margin-right: 20px;
+}
+
 .header__title-highlight {
     color: var(--purple-colour);
     margin-right: 10px;
     font-weight: 700;
 }
+
+.header__tagline {
+    font-size: 2rem;
+}
+
+.header__tagline a {
+    color: var(--green-colour);
+    font-size: 2rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {}
+
+@media only screen and (max-width: 400px) {}
