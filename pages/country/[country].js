@@ -3,6 +3,19 @@ import fetch from 'isomorphic-unfetch';
 import { ResponsiveLine } from '@nivo/line';
 import ComparePanel from '../../components/ComparePanel';
 
+import './index.css';
+
+
+const Tooltip = ({serieId, color, data, ...e}) => {
+    console.log(e)
+    return (
+        <div className="tooltip">
+            <h6 style={{ color: color }}>{serieId}</h6>
+            <p className="tooltip__desc"><span>{data.xFormatted}:</span> {data.yFormatted}</p>
+        </div>
+    )
+}
+
 const Country = props => {
 
     if (!props.results) {
@@ -18,37 +31,32 @@ const Country = props => {
 
     // confirmed data // index 0
     graphData.push({
-        id: "Confirmed cases",
-        color: "hsl(130, 70%, 50%)",
+        id: "Currently active",
         data: []
     })
 
     // deaths // index 1
     graphData.push({
         id: "Deaths",
-        color: "hsl(122, 70%, 50%)",
         data: []
     })
 
     // recovered // index 2
     graphData.push({
         id: "Recovered",
-        color: "hsl(130, 70%, 50%)",
         data: []
     })
 
     props.results.forEach(day => {
         //if (day.confirmed < 100) return null
         if (day.confirmed === 0) return null
-
+console.log(day.date)
         // confirmed
         graphData[0].data.push({ x: day.date, y: day.confirmed })
         // deaths
         graphData[1].data.push({ x: day.date, y: day.deaths })
         // deaths
         graphData[2].data.push({ x: day.date, y: day.recovered })
-        //deaths.push({ x: new Date(day.date), y: day.deaths })
-        //recovered.push({ x: new Date(day.date), y: day.recovered })
     })
 
     const currentDay = props.results[props.results.length - 1];
@@ -59,33 +67,28 @@ const Country = props => {
 
     return (
         <Layout>
-            <h2>{props.country}</h2>
+            <h2 style={{marginTop: '30px'}}>{props.country}</h2>
             <div className="panel-group">
                 <ComparePanel className="compare--total" title="Total Confirmed" current={currentDay.confirmed} prev={prevDay.confirmed} />
-                <ComparePanel className="compare--active" title="Active Confirmed" current={totalCurrentActive} prev={totalPreviousActive} />
+                <ComparePanel className="compare--active" title="Currently Active" current={totalCurrentActive} prev={totalPreviousActive} />
                 <ComparePanel className="compare--recovered" title="Recovered" current={currentDay.recovered} prev={prevDay.recovered} />
                 <ComparePanel className="compare--deaths" title="Deaths" current={currentDay.deaths} prev={prevDay.deaths} />
             </div>
             <div style={{ height: '500px' }}>
                 <ResponsiveLine
-                    margin={{ top: 20, right: 20, bottom: 60, left: 80 }}
+                    margin={{ top: 40, right: 5, bottom: 60, left: 40 }}
                     data={graphData}
+                    colors={['#fa6400','#6236ff', '#1cb142']}
                     xScale={{
                         type: 'time',
                         format: '%Y-%m-%d',
                         precision: 'day',
                     }}
-                    xFormat="time:%b %d"
-                    yScale={{
-                        type: 'linear',
-                        stacked: false,
-
-                    }}
-                    // axisLeft={{
-                    //     tickValues: null
-                    // }}
+                    colorBy={d => d.color}
+                    xFormat="time: %d/%b"
+                  
                     axisBottom={{
-                        format: '%b %m',
+                        format: '%d/%b',
                     }}
                     pointSize={5}
                     pointBorderWidth={1}
@@ -95,14 +98,7 @@ const Country = props => {
                     }}
                     useMesh={true}
                     enableSlices={false}
-                    // tooltip={(e) => {
-                    //     console.log(e)
-                    //     return (
-                    //         <div>
-                    //             Yo
-                    //         </div>
-                    //     )
-                    // }}
+                    tooltip={e => <Tooltip {...e.point} />}
                     legends={[
                         {
                             anchor: 'bottom',
@@ -118,15 +114,15 @@ const Country = props => {
                             symbolSize: 12,
                             symbolShape: 'circle',
                             symbolBorderColor: 'rgba(0, 0, 0, .5)',
-                            effects: [
-                                {
-                                    on: 'hover',
-                                    style: {
-                                        itemBackground: 'rgba(0, 0, 0, .03)',
-                                        itemOpacity: 1
-                                    }
-                                }
-                            ]
+                            // effects: [
+                            //     {
+                            //         on: 'hover',
+                            //         style: {
+                            //             itemBackground: 'rgba(0, 0, 0, .03)',
+                            //             itemOpacity: 1
+                            //         }
+                            //     }
+                            // ]
                         }
                     ]}
                 />

@@ -1,0 +1,14 @@
+.tooltip {
+    background: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.tooltip__desc {
+    font-size: 1rem;
+}
+
+.tooltip__desc span {
+    font-weight: 600;
+}

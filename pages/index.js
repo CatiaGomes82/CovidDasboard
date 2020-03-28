@@ -6,9 +6,9 @@ import Link from 'next/link';
 
 import ComparePanel from '../components/ComparePanel';
 import Panel from '../components/Panel';
-import DynamicSelect from '../components/DynamicSelect';
+//import DynamicSelect from '../components/DynamicSelect';
 import CountryList from '../components/CountryList';
-
+import Filter from '../components/Filter';
 import { COUNTRIES_API, ALL_DATA_API } from '../constants/settings';
 import { figureFormatter } from '../utils/formatter';
 
@@ -38,12 +38,12 @@ const Index = () => {
     let filteredCountries = [];
 
     let countriesInGraph = [
-        "Portugal",
-        //"China",
-        "United Kingdom",
-        //"Italy",
+       // "Portugal",
+        "China",
+       // "United Kingdom",
+       "Italy",
         //"Spain",
-       // "US",
+        //"US",
        // "France"
        //"Switzerland",
        //"Netherlands"
@@ -97,11 +97,10 @@ const Index = () => {
                             <ComparePanel className="compare--recovered" title="Recovered" current={totalCurrentRecovered} prev={totalPreviousRecovered} />
                             <ComparePanel className="compare--deaths" title="Deaths" current={totalCurrentDeaths} prev={totalPreviousDeaths} />
                         </div>
+                        {/* <Filter  /> */}
                         <CountryList
                             title="Confirmed Cases by Country"
-                            allCountries={allCountries}
-                            currentData={currentData}
-                            filteredCountries={filteredCountries}
+                            results={results}
                         />
                     </React.Fragment>
                 ) : (
