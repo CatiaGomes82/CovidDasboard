@@ -8,7 +8,7 @@ import ComparePanel from '../components/ComparePanel';
 import Panel from '../components/Panel';
 //import DynamicSelect from '../components/DynamicSelect';
 import CountryList from '../components/CountryList';
-import Filter from '../components/Filter';
+// import Filter from '../components/Filter';
 import { COUNTRIES_API, ALL_DATA_API } from '../constants/settings';
 import { figureFormatter } from '../utils/formatter';
 
