@@ -1,4 +1,3 @@
-import { ResponsiveLine } from '@nivo/line';
 import Link from 'next/link'
 import Panel from '../Panel';
 
@@ -85,7 +84,6 @@ const CountryList = (props) => {
                 data={deathsData}
                 property="deaths"
             />
-            
         </Panel>
     );
 }

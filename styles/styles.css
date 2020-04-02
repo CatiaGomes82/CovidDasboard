@@ -124,3 +124,21 @@ html, body, body>div {
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+
+/* graphs tooltip */
+.tooltip {
+    background: #ffffff;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px 10px;
+}
+
+.tooltip__desc {
+    font-size: 1rem;
+    line-height: 1.2em;
+    margin-top: 2px;
+}
+
+.tooltip__desc span {
+    font-weight: 600;
+}
