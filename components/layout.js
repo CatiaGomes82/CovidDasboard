@@ -1,21 +1,21 @@
-import Head from 'next/head';
-import Header from './Header/header';
-import Footer from './Footer/footer';
+import Head from "next/head";
+import Header from "./Header";
+import Footer from "./Footer";
 
-const Layout = props => (
+const Layout = ({ children }) => (
   <React.Fragment>
-      <Head>
-        <meta
-          name="viewport"
-          content="initial-scale=1.0, width=device-width"
-          key="viewport"
-        />
+    <Head>
+      <meta
+        name="viewport"
+        content="initial-scale=1.0, width=device-width"
+        key="viewport"
+      />
       <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet"></link>
     </Head>
     <React.Fragment>
       <Header />
       <main id="main" className="wrapper">
-        {props.children}
+        {children}
       </main>
       <Footer />
     </React.Fragment>

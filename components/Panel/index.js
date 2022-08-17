@@ -1,11 +1,11 @@
-import './panel.module.css';
+import "./panel.module.css";
 
-const Panel = props => {
+const Panel = ({className, children}) => {
     return (
-        <div className={`panel ` + props.className}>
-            {props.children}
+        <div className={`panel ${className}`}>
+            {children}
         </div>
-    )
-}
+    );
+};
 
 export default Panel;

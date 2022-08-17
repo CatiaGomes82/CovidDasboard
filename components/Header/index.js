@@ -1,6 +1,5 @@
-import Link from 'next/link';
-
-import './header.module.css';
+import Link from "next/link";
+import "./header.module.css";
 
 const Header = () => (
   <header className="header">
@@ -14,7 +13,7 @@ const Header = () => (
       <h2 className="header__tagline">
         <a href="https://www.gov.uk/coronavirus">
           #StayHomeSaveLifes
-          </a>
+        </a>
       </h2>
     </div>
   </header>

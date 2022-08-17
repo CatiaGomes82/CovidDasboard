@@ -1,10 +1,9 @@
 .compare {
-    margin-top: 20px;
     text-align: center;
-    width: calc(25% - 15px);
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex: 1;
 }
 
 .compare--total .compare__figure {
@@ -59,16 +58,4 @@
 
 .compare__character--decrease {
     color: var(--green-colour);
-}
-
-@media only screen and (max-width: 768px) {
-    .compare {
-        width: calc(50% - 10px);
-    }
-}
-
-@media only screen and (max-width: 400px) {
-    .compare {
-        width: 100%;
-    }
 }

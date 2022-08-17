@@ -2,10 +2,11 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 40px;
 }
 
 .country-list__group {
-    width: calc(25% - 20px);
+    flex: 1;
 }
 
 .country-list__title {
@@ -22,9 +23,6 @@
   
     color: var(--grey-colour);
     padding: 10px 10px 8px;
-}
-
-.country-list__list-item:first-child {
 }
 
 .country-list__list-item span {

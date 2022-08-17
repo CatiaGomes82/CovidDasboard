@@ -13,7 +13,7 @@
     flex-wrap: wrap;
 }
 
-.footer a {
+.footer__link  {
     text-decoration: none;
     color: var(--purple-colour);
     font-weight: 600;
