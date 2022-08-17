@@ -1,5 +1,9 @@
 .compare {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
 }
 
 .compare--total .compare__figure {
@@ -19,7 +23,6 @@
 }
 
 .compare__figure {
-    margin-top: 5px;
     font-size: 2.6rem;
     line-height: 3rem;
     font-weight: 600;
@@ -47,6 +50,10 @@
 
 .compare__character--increase {
     color: var(--red-colour);
+}
+
+.compare--recovered .compare__character--increase {
+    color: var(--green-colour);
 }
 
 .compare__character--decrease {

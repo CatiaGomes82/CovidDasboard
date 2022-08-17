@@ -1,9 +1,9 @@
-import Panel from '../Panel';
-import { figureFormatter } from '../../utils/formatter';
-import styles from './compare-panel.module.css';
+import Panel from "../Panel";
+import { figureFormatter } from "../../utils/formatter";
+import "./compare-panel.module.css";
 
-const ComparePanel = props => {
-    const differencePercentage = Math.round(100 - (props.prev * 100 / props.current));
+const ComparePanel = ({ className, prev, current, title }) => {
+    const differencePercentage = Math.round(100 - (prev * 100 / current));
 
     const getCharacter = (differencePercentage) => {
         if (differencePercentage === 0) {
@@ -15,18 +15,18 @@ const ComparePanel = props => {
         } else {
             return (<span className="compare__character compare__character--decrease">⬇</span>)
         }
-    }
+    };
 
     return (
-        <Panel className={`compare ` + props.className}>
-            <h3 className="compare__title">{props.title}</h3>
-            <p className="compare__figure">{figureFormatter(props.current)}</p>
+        <Panel className={`compare ${className}`}>
+            <h3 className="compare__title">{title}</h3>
+            <p className="compare__figure">{figureFormatter(current)}</p>
             <p className="compare__difference">
                 {getCharacter(differencePercentage)}
                 {differencePercentage}%
             </p>
         </Panel>
-    )
-}
+    );
+};
 
 export default ComparePanel;
