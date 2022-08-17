@@ -5,7 +5,7 @@ import CountryChart from "../../components/CountryChart";
 import DailyCasesChart from "../../components/DailyCasesChart";
 import { ALL_DATA_API } from "../../constants/settings";
 
-const Country = ({results, country }) => {
+const Country = ({ results, country }) => {
 
     if (!results) {
         return (

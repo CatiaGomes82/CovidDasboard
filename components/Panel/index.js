@@ -1,6 +1,6 @@
 import "./panel.module.css";
 
-const Panel = ({className, children}) => {
+const Panel = ({ className, children }) => {
     return (
         <div className={`panel ${className}`}>
             {children}
