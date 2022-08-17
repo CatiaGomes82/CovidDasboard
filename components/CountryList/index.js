@@ -13,7 +13,6 @@ const CountryList = ({ results }) => {
         const lastDayData = countryData[countryData.length - 1];
         const actualActiveCases = lastDayData.confirmed - lastDayData.deaths - lastDayData.recovered;
 
-        console.log(countryData)
         if (lastDayData.confirmed > 0) {
             totalCasesData.push({ name: country, confirmed: lastDayData.confirmed });
         }
